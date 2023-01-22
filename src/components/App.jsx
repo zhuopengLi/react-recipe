@@ -1,38 +1,29 @@
-import React, { useState } from 'react'
-import Title from './reactComponents/Title'
-import Footer from './reactComponents/Footer'
-import Main from './reactComponents/Main'
-import Modal from './reactComponents/Modal'
-
+import React from 'react'
+import { BrowserRouter as Router, Routes, Route, redirect } from 'react-router-dom'
+import Home from './pages/Home'
+import Create from './pages/Create'
+import Recipe from './pages/Recipe'
+import Search from './pages/Search'
+import Navbar from './reactComponents/Navbar'
 
 export default function App() {
-
-  const [showEvents, setShowEvents] = useState(true)
-  const [events, setEvents] = useState([
-    { title: "Ea veniam aute ipsum nulla proident in anim fugiat voluptate qui consectetur.", location: "Guangzhou", date: "2023-01-05", id: 1 },
-    { title: "Exercitation proident duis elit ex eu laborum esse.", location: "Aachen", date: "1991-01-05", id: 2 },
-    { title: "Esse aliqua et excepteur Lorem officia tempor anim ea in exercitation incididunt laboris.", location: "New York", date: "2000-01-01", id: 3 },
-  ])
-
-  const addEvent = event => {
-    setEvents(prev => {
-      return [...prev, event]
-    })
-  }
-
-
-  const [showModal, setShowModal] = useState(true)
 
   return (
     <div className="App">
 
-      <Title title="Events" subtitle="LOLLOL" />
+      <Router>
 
-      <Main events={events} setEvents={setEvents} showEvents={showEvents} setShowEvents={setShowEvents} />
+        <Navbar />
 
-      <Footer showModal={showModal} setShowModal={setShowModal} />
+        <Routes>
+          <Route path='/' exact="true" element={<Home />} />
+          <Route path='/create' exact="true" element={<Create />} />
+          <Route path='/search' exact="true" element={<Search />} />
+          <Route path='/recipes/:id' exact="true" element={<Recipe />} />
+          <Route path="*" element={redirect("/")} />
+        </Routes>
 
-      <Modal showModal={showModal} setShowModal={setShowModal} addEvent={addEvent} />
+      </Router>
 
     </div>
   )

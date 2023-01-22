@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 import react from "@astrojs/react";
 
+// https://astro.build/config
 export default defineConfig({
   integrations: [react()],
   vite: {
@@ -14,6 +15,11 @@ export default defineConfig({
           }
         }
       }
+    },
+    server: {
+      fs: {
+        allow: ['E:/repos/CODING/webDev/js-tutorial/react-tutorial-new/']
+      }
     }
-  },
+  }
 });

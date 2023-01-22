@@ -1,0 +1,16 @@
+---
+export const getStaticPaths = async () => {
+    return [
+        { params: { page: 'create' } },
+        { params: { page: 'recipe' } },
+        { params: { page: 'search' } },
+    ]
+}
+
+import App from '../components/App'
+import Base from '../layouts/Base.astro'
+---
+
+<Base>
+    <App client:only="react" />
+</Base>
