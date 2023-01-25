@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import React from 'react'
-import useTheme from '../hooks/useTheme'
+import useTheme from '../reactHooks/useTheme'
 
 export default function RecipeList({ recipes }) {
     const {mode} = useTheme()

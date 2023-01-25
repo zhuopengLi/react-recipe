@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink, Link } from 'react-router-dom'
-import Searchbar from './Searchbar'
-import useTheme from '../hooks/useTheme'
+import Searchbar from '../reactComps./reactComps/Searchbar'
+import useTheme from '../reactHooks/useTheme'
 
 export default function Navbar() {
     const { color, changeColor } = useTheme()

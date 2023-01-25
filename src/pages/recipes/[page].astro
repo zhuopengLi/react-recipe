@@ -7,10 +7,10 @@ export const getStaticPaths = async () => {
     ]
 }
 
-import App from '../../components/App'
+import Wrapper from '../../components/Wrapper'
 import Base from '../../layouts/Base.astro'
 ---
 
 <Base>
-    <App client:only="react" />
+    <Wrapper client:only="react" />
 </Base>

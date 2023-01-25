@@ -1,5 +1,5 @@
 import React from 'react'
-import useTheme from '../hooks/useTheme'
+import useTheme from '../reactHooks/useTheme'
 import { useEffect } from 'react'
 
 const themeColors = ['#58249c', '#249c6b', '#b70233']

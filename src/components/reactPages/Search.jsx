@@ -1,7 +1,7 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom'
-import useFetch from '../hooks/useFetch'
-import RecipeList from '../reactComponents/RecipeList'
+import useFetch from '../reactHooks/useFetch'
+import RecipeList from '../reactComps/RecipeList'
 
 export default function Search() {
     const queryStr = useLocation().search

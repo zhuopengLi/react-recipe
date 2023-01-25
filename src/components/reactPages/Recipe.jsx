@@ -1,7 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import useFetch from '../hooks/useFetch'
-import useTheme from '../hooks/useTheme'
+import useFetch from '../reactHooks/useFetch'
+import useTheme from '../reactHooks/useTheme'
 
 export default function Recipe() {
     let { id } = useParams()
